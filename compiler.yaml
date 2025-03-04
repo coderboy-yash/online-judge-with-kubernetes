@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: compiler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: compiler
+  template:
+    metadata:
+      labels:
+        app: compiler
+    spec:
+      containers:
+        - name: compiler
+          image: my-compiler-service
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3001
+          resources:
+            requests:
+              cpu: "100m"  # Request 100 milliCPU
+              memory: "128Mi"  # Request 128 MiB of memory
+            limits:
+              cpu: "200m"  # Limit to 500 milliCPU
+              memory: "256Mi"  # Limit to 512 MiB of memory
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: compiler-service
+spec:
+  selector:
+    app: compiler
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 3001
+      targetPort: 3001
+      nodePort: 30001
+  
