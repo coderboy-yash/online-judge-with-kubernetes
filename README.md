@@ -1,4 +1,12 @@
 ﻿# Online Judge Platform
+## screenshots
+![image](https://github.com/user-attachments/assets/55840459-32ea-4845-af42-867978896c9f)
+![image](https://github.com/user-attachments/assets/76431e10-01cb-402d-91b1-05c18f5f00a5)
+![image](https://github.com/user-attachments/assets/bf329d28-1e81-4373-a674-6eec3558a3ea)
+![image](https://github.com/user-attachments/assets/b051b79f-a198-47c6-874c-9a1a4a4d0390)
+## scaling replicas of the compiler based on the number of requests
+![image](https://github.com/user-attachments/assets/dcbcbe05-54e5-4cd2-aaa0-85cfbf0277b8)
+![image](https://github.com/user-attachments/assets/67d6c59d-add1-4acb-adb6-9b617d334cf8)
 
 ## Overview
 The Online Judge Platform is a robust and scalable system designed for solving Data Structures and Algorithms (DSA) problems with an integrated code editor. Users can write, execute, and test their solutions in **C++** and **Python** within a seamless environment. The platform is built with a **three-tier architecture**, ensuring efficiency, scalability, and fault tolerance.
@@ -7,12 +15,12 @@ The Online Judge Platform is a robust and scalable system designed for solving D
 - 🏗 **Three-Tier Architecture**:  
   - **Frontend**: User interface for problem-solving and code execution.  
   - **Backend Server**: Manages user requests, problem sets, and results.  
-  - **Compiler Service**: Isolated execution environment for running code securely.  
+  - **Compiler Service**: no third party api for compiler , using compilers installed in a docker container.
 
 - 🚀 **Technology Stack**:  
-  - **Frontend**: React.js (or preferred framework) for an interactive UI.  
+  - **Frontend**: React.js + vite for an interactive UI.  
   - **Backend**: Node.js with Express.js for API handling.  
-  - **Database**: MongoDB/PostgreSQL for storing problems, submissions, and user data.  
+  - **Database**: MongoDB for storing problems, submissions, and user data.  
   - **Compiler Service**: Secure execution using Dockerized environments.  
 
 - 🏗 **Containerization & Orchestration**:  
